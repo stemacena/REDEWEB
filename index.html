@@ -71,8 +71,8 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
+            font-size: 1.15rem;
+            max-width: 900px;
             margin: 0 auto;
             opacity: 0.9;
         }
@@ -120,6 +120,11 @@
             transition: transform 0.3s ease;
             border-top: 4px solid var(--rj-blue-main);
         }
+        
+        /* Nova classe para unificar os blocos compridos de texto */
+        .card-wide {
+            grid-column: 1 / -1; 
+        }
 
         .card:hover {
             transform: translateY(-5px);
@@ -140,6 +145,27 @@
         .card p {
             color: var(--text-gray);
             font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Botões de Ação --- */
+        .btn-action {
+            display: inline-block;
+            background-color: var(--rj-blue-main);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-action:hover {
+            background-color: var(--rj-blue-dark);
+            color: var(--white);
         }
 
         /* --- Numbers Banner --- */
@@ -310,7 +336,7 @@
 
     <header class="hero">
         <h1>Rede Web de Museus</h1>
-        <p>Sistema Estadual de gerenciamento e integração de acervos museológicos do Governo do Estado do Rio de Janeiro.</p>
+        [cite_start]<p>A Rede Web de Museus do Estado do Rio de Janeiro é uma política estadual, cujo objetivo é fomentar a colaboração e cooperação entre os museus e instituições de memória para ações de gestão, documentação, pesquisa, educação, comunicação, integração e acesso aos acervos museológicos de museus e instituições de memória no estado do Rio de Janeiro. [cite: 3]</p>
     </header>
 
     <main>
@@ -324,21 +350,16 @@
             </div>
             
             <div class="card">
-                <i class="fa-solid fa-database"></i>
-                <h3>O SISGAM</h3>
-                <p>O Sistema de Gerenciamento de Acervos Museológicos é a principal ferramenta tecnológica fornecida pela rede para a integração e gestão informatizada dos acervos das instituições participantes.</p>
-            </div>
-
-            <div class="card">
-                <i class="fa-solid fa-clock-rotate-left"></i>
-                <h3>Nossa Trajetória</h3>
-                <p>Iniciado em 2008 com museus da FUNARJ, o sucesso do projeto impulsionou a criação da Rede Web como política pública estadual em 2014, aberta a esferas federais, municipais, particulares e comunitárias.</p>
-            </div>
-
-            <div class="card">
                 <i class="fa-solid fa-sitemap"></i>
-                <h3>Estrutura de Gestão</h3>
-                <p>Coordenada pela Superintendência de Museus (SECEC/RJ) com apoio da Assessoria de TI. As decisões e aprovações passam pela Comissão Técnica Permanente da Rede Web de Museus.</p>
+                <h3>Estrutura da Rede</h3>
+                [cite_start]<p>A Rede Web de Museus tem a seguinte estrutura: coordenação e gestão através da Secretaria de Estado de Cultura e Economia Criativa, Superintendência de Museus, Coordenação de Museologia; [cite: 8] [cite_start]apoio técnico ao SISGAM através da Secretaria de Estado de Cultura e Economia Criativa, Assessoria de Tecnologia da Informação; [cite: 9] [cite_start]Comissão Técnica Permanente da Rede Web de Museus do Estado do Rio de Janeiro, composta por coordenação, membros permanentes e membros colaboradores. [cite: 10]</p>
+            </div>
+
+            <div class="card card-wide">
+                <i class="fa-solid fa-database"></i>
+                <h3>O SISGAM e Nossa Trajetória</h3>
+                [cite_start]<p>O SISGAM – Sistema de Gerenciamento de Acervos Museológicos - é a principal ferramenta de integração e gestão de acervos para os museus que fazem parte da rede. [cite: 5] [cite_start]Este projeto foi iniciado em 2008 com museus pertencentes à FUNARJ, o sucesso impulsionou a criação da Rede Web de Museus como política pública, em 2014, para adesão de instituições museais da esfera estadual, federal, municipal, particulares e comunitárias do território do Rio de Janeiro. [cite: 6] [cite_start]Atualmente, contabiliza 26 instituições, entre públicas e privadas, que assinaram Termo de Adesão entre 2014 e 2023, alcançando 37 unidades / museus. [cite: 7]</p>
+                <a href="#" class="btn-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Acesse o SISGAM</a>
             </div>
         </div>
 
@@ -361,24 +382,25 @@
         
         <div class="adesao-container">
             <p class="adesao-intro">
-                A adesão é <strong>gratuita e facultativa</strong>, possuindo caráter eminentemente técnico. Ela não condiciona a participação obrigatória em outros projetos do estado, nem obriga o uso exclusivo de ferramentas como o SISGAM.
+                A adesão é <strong>gratuita e facultativa</strong>, possuindo caráter eminentemente técnico. [cite_start]Ela não condiciona a participação obrigatória em outros projetos do estado, nem obriga o uso exclusivo de ferramentas como o SISGAM. [cite: 19]
             </p>
 
             <div class="adesao-grid">
                 <div class="adesao-box">
                     <h4><i class="fa-solid fa-clipboard-list"></i> Requisitos</h4>
                     <ul class="req-list">
-                        <li>Possuir endereço fixo no Estado do Rio de Janeiro.</li>
-                        <li>Estar inscrito (ou em processo de inscrição) no Cadastro Fluminense de Museus do Sistema Estadual de Museus (SIM/RJ).</li>
-                        <li>Estar de acordo com o caráter colaborativo e de cooperação das ferramentas desenvolvidas na Rede, que não são de uso exclusivo de um único museu.</li>
+                        [cite_start]<li>Possua endereço no Estado do Rio de Janeiro; [cite: 13]</li>
+                        [cite_start]<li>Esteja inscrito ou inscreva-se no Cadastro Fluminense de Museus do Sistema Estadual de Museus do Estado do Rio de Janeiro (SIM/RJ); [cite: 14]<br>
+                        <a href="https://sim-rj-cfm.netlify.app/" target="_blank" class="btn-action" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; margin-bottom: 0.5rem;">Conheça o CFM</a></li>
+                        [cite_start]<li>Aceite que as atividades e ferramentas desenvolvidas na Rede Web de Museus são de caráter colaborativo e de cooperação entre os membros da rede, não sendo exclusivo de um só museu. [cite: 15]</li>
                     </ul>
                 </div>
 
                 <div class="adesao-box">
                     <h4><i class="fa-solid fa-shoe-prints"></i> Passo a Passo</h4>
                     <ul class="step-list">
-                        <li><strong>Manifestação de Interesse:</strong> A instituição envia uma solicitação por e-mail para a Coordenação da Comissão Técnica Permanente. A Coordenação apresentará as condições e tirará dúvidas.</li>
-                        <li><strong>Aprovação:</strong> O pedido é levado para a reunião ordinária da Comissão Técnica, que vota a aprovação da adesão (registrada em ata oficial).</li>
+                        [cite_start]<li><strong>Manifestação de Interesse:</strong> A instituição de memória ou museu envia uma solicitação (via e-mail) para a Coordenação da Comissão Técnica Permanente da Rede Web de Museus do Estado do Rio de Janeiro manifestando o interesse de participar, a Coordenação apresenta as condições e exime eventuais dúvidas; [cite: 17]</li>
+                        [cite_start]<li><strong>Aprovação:</strong> Em reunião ordinária a Comissão Técnica vota a aprovação da adesão, que constará em ata. [cite: 18]</li>
                     </ul>
                 </div>
             </div>

@@ -4,155 +4,303 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rede Web de Museus - Governo do Estado do Rio de Janeiro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-blue: #004b87; /* Azul institucional RJ */
-            --secondary-blue: #0066cc;
-            --light-bg: #f4f7f6;
-            --text-dark: #333333;
-            --text-light: #666666;
-            --white: #ffffff;
+            --rj-blue-dark: #003366;
+            --rj-blue-main: #0055A4;
+            --rj-blue-light: #E6F0FA;
+            --text-dark: #2C3E50;
+            --text-gray: #55606B;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            --accent: #27AE60;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: var(--light-bg);
+            background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        header {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 2rem 5%;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            font-weight: 300;
-        }
-
+        /* --- Header & Nav --- */
         nav {
-            background-color: var(--secondary-blue);
+            background-color: var(--rj-blue-dark);
             padding: 1rem 5%;
             display: flex;
             justify-content: center;
             gap: 2rem;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         nav a {
             color: var(--white);
             text-decoration: none;
-            font-weight: bold;
-            transition: opacity 0.3s;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            opacity: 0.8;
+            color: #90CAF9;
         }
 
+        .hero {
+            background: linear-gradient(135deg, var(--rj-blue-dark) 0%, var(--rj-blue-main) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 2rem;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* --- Main Layout --- */
         main {
-            max-width: 1000px;
-            margin: 2rem auto;
+            max-width: 1200px;
+            margin: -3rem auto 3rem;
             padding: 0 2rem;
+            position: relative;
+            z-index: 10;
         }
 
-        section {
-            background-color: var(--white);
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        .section-title {
+            text-align: center;
+            color: var(--rj-blue-dark);
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
         }
 
-        h2 {
-            color: var(--primary-blue);
-            border-bottom: 2px solid var(--secondary-blue);
-            padding-bottom: 0.5rem;
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--rj-blue-main);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- Grid Cards (Quem Somos) --- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--rj-blue-main);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--rj-blue-main);
             margin-bottom: 1.5rem;
-            font-size: 1.8rem;
         }
 
-        h3 {
-            color: var(--text-dark);
+        .card h3 {
+            font-size: 1.3rem;
             margin-bottom: 1rem;
+            color: var(--rj-blue-dark);
         }
 
-        h4 {
-            color: var(--secondary-blue);
-            margin: 1.5rem 0 0.5rem 0;
+        .card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
         }
 
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-light);
+        /* --- Numbers Banner --- */
+        .stats-banner {
+            background-color: var(--rj-blue-light);
+            border-radius: 12px;
+            padding: 3rem;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            text-align: center;
         }
 
-        ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-
-        li {
+        .stat-item h4 {
+            font-size: 3rem;
+            color: var(--rj-blue-main);
             margin-bottom: 0.5rem;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-top: 1rem;
-            transition: background-color 0.3s;
+        .stat-item p {
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 1.1rem;
         }
 
-        .cta-button:hover {
-            background-color: var(--secondary-blue);
+        /* --- Como Aderir Section --- */
+        .adesao-container {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 3rem;
+            margin-bottom: 4rem;
         }
 
-        footer {
-            background-color: var(--text-dark);
-            color: var(--white);
+        .adesao-intro {
             text-align: center;
-            padding: 2rem 5%;
-            margin-top: 2rem;
+            margin-bottom: 3rem;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+
+        .adesao-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
         }
 
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
+            .adesao-grid {
+                grid-template-columns: 1fr;
             }
+        }
+
+        .adesao-box h4 {
+            color: var(--rj-blue-dark);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .req-list {
+            list-style: none;
+        }
+
+        .req-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+        }
+
+        .req-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent);
+        }
+
+        .step-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .step-list li {
+            position: relative;
+            padding-left: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+        }
+
+        .step-list li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: -2px;
+            width: 2.2rem;
+            height: 2.2rem;
+            background-color: var(--rj-blue-main);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* --- Contato Section --- */
+        .contato-section {
+            background-color: var(--rj-blue-dark);
+            color: var(--white);
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .contato-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contato-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .info-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box i {
+            font-size: 2rem;
+            color: #90CAF9;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            background-color: var(--white);
+            border-top: 1px solid #E0E0E0;
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>Rede Web de Museus</h1>
-        <p>Estado do Rio de Janeiro</p>
-    </header>
 
     <nav>
         <a href="#quem-somos">Quem Somos</a>
@@ -160,55 +308,104 @@
         <a href="#contato">Contato</a>
     </nav>
 
+    <header class="hero">
+        <h1>Rede Web de Museus</h1>
+        <p>Sistema Estadual de gerenciamento e integração de acervos museológicos do Governo do Estado do Rio de Janeiro.</p>
+    </header>
+
     <main>
-        <section id="quem-somos">
-            [cite_start]<h2>QUEM SOMOS? [cite: 1]</h2>
-            [cite_start]<h3>Bem-vindo(a) à Rede Web de Museus [cite: 2]</h3>
+        <h2 class="section-title" id="quem-somos">Quem Somos</h2>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Nosso Objetivo</h3>
+                <p>Fomentar a colaboração e cooperação entre museus e instituições de memória fluminenses para ações de gestão, documentação, pesquisa, educação e acesso aos acervos.</p>
+            </div>
             
-            [cite_start]<p>A Rede Web de Museus do Estado do Rio de Janeiro é uma política estadual, cujo objetivo é fomentar a colaboração e cooperação entre os museus e instituições de memória para ações de gestão, documentação, pesquisa, educação, comunicação, integração e acesso aos acervos museológicos de museus e instituições de memória no estado do Rio de Janeiro. [cite: 3]</p>
-            
-            [cite_start]<p>O SISGAM (Sistema de Gerenciamento de Acervos Museológicos) é a principal ferramenta de integração e gestão de acervos para os museus que fazem parte da rede. [cite: 4, 5]</p>
-            
-            [cite_start]<p>Este projeto foi iniciado em 2008 com museus pertencentes à FUNARJ, o sucesso impulsionou a criação da Rede Web de Museus como política pública, em 2014, para adesão de instituições museais da esfera estadual, federal, municipal, particulares e comunitárias do território do Rio de Janeiro. [cite: 6] [cite_start]Atualmente, contabiliza 26 instituições, entre públicas e privadas, que assinaram Termo de Adesão entre 2014 e 2023, alcançando 37 unidades / museus. [cite: 7]</p>
+            <div class="card">
+                <i class="fa-solid fa-database"></i>
+                <h3>O SISGAM</h3>
+                <p>O Sistema de Gerenciamento de Acervos Museológicos é a principal ferramenta tecnológica fornecida pela rede para a integração e gestão informatizada dos acervos das instituições participantes.</p>
+            </div>
 
-            <h4>Estrutura da Rede Web de Museus:</h4>
-            <ul>
-                [cite_start]<li>Coordenação e gestão através da Secretaria de Estado de Cultura e Economia Criativa, Superintendência de Museus, Coordenação de Museologia; [cite: 8]</li>
-                [cite_start]<li>Apoio técnico ao SISGAM através da Secretaria de Estado de Cultura e Economia Criativa, Assessoria de Tecnologia da Informação; [cite: 9]</li>
-                [cite_start]<li>Comissão Técnica Permanente da Rede Web de Museus do Estado do Rio de Janeiro, composta por coordenação, membros permanentes e membros colaboradores. [cite: 10]</li>
-            </ul>
+            <div class="card">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <h3>Nossa Trajetória</h3>
+                <p>Iniciado em 2008 com museus da FUNARJ, o sucesso do projeto impulsionou a criação da Rede Web como política pública estadual em 2014, aberta a esferas federais, municipais, particulares e comunitárias.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-sitemap"></i>
+                <h3>Estrutura de Gestão</h3>
+                <p>Coordenada pela Superintendência de Museus (SECEC/RJ) com apoio da Assessoria de TI. As decisões e aprovações passam pela Comissão Técnica Permanente da Rede Web de Museus.</p>
+            </div>
+        </div>
+
+        <div class="stats-banner">
+            <div class="stat-item">
+                <h4>26</h4>
+                <p>Instituições Aderidas</p>
+            </div>
+            <div class="stat-item">
+                <h4>37</h4>
+                <p>Unidades e Museus</p>
+            </div>
+            <div class="stat-item">
+                <h4>2014</h4>
+                <p>Início da Política Pública</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="como-aderir">Como Aderir à Rede</h2>
+        
+        <div class="adesao-container">
+            <p class="adesao-intro">
+                A adesão é <strong>gratuita e facultativa</strong>, possuindo caráter eminentemente técnico. Ela não condiciona a participação obrigatória em outros projetos do estado, nem obriga o uso exclusivo de ferramentas como o SISGAM.
+            </p>
+
+            <div class="adesao-grid">
+                <div class="adesao-box">
+                    <h4><i class="fa-solid fa-clipboard-list"></i> Requisitos</h4>
+                    <ul class="req-list">
+                        <li>Possuir endereço fixo no Estado do Rio de Janeiro.</li>
+                        <li>Estar inscrito (ou em processo de inscrição) no Cadastro Fluminense de Museus do Sistema Estadual de Museus (SIM/RJ).</li>
+                        <li>Estar de acordo com o caráter colaborativo e de cooperação das ferramentas desenvolvidas na Rede, que não são de uso exclusivo de um único museu.</li>
+                    </ul>
+                </div>
+
+                <div class="adesao-box">
+                    <h4><i class="fa-solid fa-shoe-prints"></i> Passo a Passo</h4>
+                    <ul class="step-list">
+                        <li><strong>Manifestação de Interesse:</strong> A instituição envia uma solicitação por e-mail para a Coordenação da Comissão Técnica Permanente. A Coordenação apresentará as condições e tirará dúvidas.</li>
+                        <li><strong>Aprovação:</strong> O pedido é levado para a reunião ordinária da Comissão Técnica, que vota a aprovação da adesão (registrada em ata oficial).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="contato-section" id="contato">
+            <h2>Fale Conosco</h2>
+            <p>Deseja iniciar o processo de adesão ou tirar dúvidas sobre o SISGAM? Entre em contato com a Coordenação.</p>
+            
+            <div class="contato-info">
+                <div class="info-box">
+                    <i class="fa-regular fa-envelope"></i>
+                    <strong>E-mail Institucional</strong>
+                    <span>contato.museus@cultura.rj.gov.br</span> </div>
+                
+                <div class="info-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <strong>Localização</strong>
+                    <span>Secretaria de Cultura e Economia Criativa - RJ</span>
+                </div>
+            </div>
         </section>
 
-        <section id="como-aderir">
-            [cite_start]<h2>COMO ADERIR? [cite: 11]</h2>
-            
-            [cite_start]<p>A adesão à Rede Web de Museus é gratuita e facultativa, possui caráter técnico, não condiciona a participação em projetos realizados e desenvolvidos pela rede, nem condiciona ao uso de ferramentas tecnológicas como o SISGAM. [cite: 19]</p>
-            
-            <h4>Requisitos para Adesão:</h4>
-            [cite_start]<p>Para adesão à Rede Web de Museus do Estado do Rio de Janeiro estabelece-se que o museu ou instituição de memória: [cite: 12]</p>
-            <ul>
-                [cite_start]<li>Possua endereço no Estado do Rio de Janeiro; [cite: 13]</li>
-                [cite_start]<li>Esteja inscrito ou inscreva-se no Cadastro Fluminense de Museus do Sistema Estadual de Museus do Estado do Rio de Janeiro (SIM/RJ); [cite: 14]</li>
-                [cite_start]<li>Aceite que as atividades e ferramentas desenvolvidas na Rede Web de Museus são de caráter colaborativo e de cooperação entre os membros da rede, não sendo exclusivo de um só museu. [cite: 15]</li>
-            </ul>
-
-            [cite_start]<h4>Passo a Passo para Formalizar: [cite: 16]</h4>
-            <ol style="margin-left: 1.5rem; margin-bottom: 1rem; color: var(--text-light);">
-                [cite_start]<li style="margin-bottom: 0.5rem;">A instituição de memória ou museu envia uma solicitação (via e-mail) para a Coordenação da Comissão Técnica Permanente da Rede Web de Museus do Estado do Rio de Janeiro manifestando o interesse de participar, a Coordenação apresenta as condições e exime eventuais dúvidas; [cite: 17]</li>
-                [cite_start]<li style="margin-bottom: 0.5rem;">Em reunião ordinária a Comissão Técnica vota a aprovação da adesão, que constará em ata. [cite: 18]</li>
-            </ol>
-        </section>
-
-        <section id="contato">
-            [cite_start]<h2>CONTATO [cite: 20]</h2>
-            <p>Tem interesse em integrar sua instituição ou possui alguma dúvida sobre o SISGAM e a Rede Web de Museus?</p>
-            <p>Envie sua solicitação para a Coordenação da Comissão Técnica Permanente.</p>
-            <a href="mailto:email@cultura.rj.gov.br" class="cta-button">Enviar E-mail para a Coordenação</a>
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Rede Web de Museus. Secretaria de Estado de Cultura e Economia Criativa - RJ.</p>
+        <p>&copy; 2026 Rede Web de Museus - Sistema Estadual de Museus do Rio de Janeiro (SIM/RJ). Todos os direitos reservados.</p>
     </footer>
 
 </body>

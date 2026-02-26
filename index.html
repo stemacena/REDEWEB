@@ -107,9 +107,16 @@
         /* --- Grid Cards (Quem Somos) --- */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr); /* Força 2 colunas exatas */
             gap: 2rem;
             margin-bottom: 4rem;
+            align-items: stretch; /* Garante que os cards estiquem para a mesma altura */
+        }
+
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .card {
@@ -119,9 +126,12 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
             border-top: 4px solid var(--rj-blue-main);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
-        /* Nova classe para unificar os blocos compridos de texto */
+        /* Classe para unificar os blocos compridos de texto */
         .card-wide {
             grid-column: 1 / -1; 
         }
@@ -157,7 +167,8 @@
             text-decoration: none;
             border-radius: 6px;
             font-weight: bold;
-            margin-top: 0.5rem;
+            margin-top: auto; /* Empurra o botão pro final do card */
+            align-self: flex-start;
             transition: background-color 0.3s ease;
             border: none;
             cursor: pointer;
@@ -336,29 +347,34 @@
 
     <header class="hero">
         <h1>Rede Web de Museus</h1>
-        [cite_start]<p>A Rede Web de Museus do Estado do Rio de Janeiro é uma política estadual, cujo objetivo é fomentar a colaboração e cooperação entre os museus e instituições de memória para ações de gestão, documentação, pesquisa, educação, comunicação, integração e acesso aos acervos museológicos de museus e instituições de memória no estado do Rio de Janeiro. [cite: 3]</p>
+        <p>A Rede Web de Museus do Estado do Rio de Janeiro é uma política estadual, cujo objetivo é fomentar a colaboração e cooperação entre os museus e instituições de memória para ações de gestão, documentação, pesquisa, educação, comunicação, integração e acesso aos acervos museológicos de museus e instituições de memória no estado do Rio de Janeiro. </p>
     </header>
 
     <main>
-        <h2 class="section-title" id="quem-somos">Quem Somos</h2>
+        <h2 class="section-title" id="quem-somos">Quem Somos </h2>
         
         <div class="cards-grid">
             <div class="card">
                 <i class="fa-solid fa-bullseye"></i>
                 <h3>Nosso Objetivo</h3>
-                <p>Fomentar a colaboração e cooperação entre museus e instituições de memória fluminenses para ações de gestão, documentação, pesquisa, educação e acesso aos acervos.</p>
+                <p>Fomentar a colaboração e cooperação entre museus e instituições de memória fluminenses para ações de gestão, documentação, pesquisa, educação e acesso aos acervos. </p>
             </div>
             
             <div class="card">
                 <i class="fa-solid fa-sitemap"></i>
                 <h3>Estrutura da Rede</h3>
-                [cite_start]<p>A Rede Web de Museus tem a seguinte estrutura: coordenação e gestão através da Secretaria de Estado de Cultura e Economia Criativa, Superintendência de Museus, Coordenação de Museologia; [cite: 8] [cite_start]apoio técnico ao SISGAM através da Secretaria de Estado de Cultura e Economia Criativa, Assessoria de Tecnologia da Informação; [cite: 9] [cite_start]Comissão Técnica Permanente da Rede Web de Museus do Estado do Rio de Janeiro, composta por coordenação, membros permanentes e membros colaboradores. [cite: 10]</p>
+                <p>A Rede Web de Museus tem a seguinte estrutura: </p>
+                <ul style="margin-left: 1.5rem; color: var(--text-gray); font-size: 0.95rem;">
+                    <li style="margin-bottom: 0.5rem;">Coordenação e gestão através da Secretaria de Estado de Cultura e Economia Criativa, Superintendência de Museus, Coordenação de Museologia; </li>
+                    <li style="margin-bottom: 0.5rem;">Apoio técnico ao SISGAM através da Secretaria de Estado de Cultura e Economia Criativa, Assessoria de Tecnologia da Informação; </li>
+                    <li>Comissão Técnica Permanente da Rede Web de Museus do Estado do Rio de Janeiro, composta por coordenação, membros permanentes e membros colaboradores. </li>
+                </ul>
             </div>
 
             <div class="card card-wide">
                 <i class="fa-solid fa-database"></i>
                 <h3>O SISGAM e Nossa Trajetória</h3>
-                [cite_start]<p>O SISGAM – Sistema de Gerenciamento de Acervos Museológicos - é a principal ferramenta de integração e gestão de acervos para os museus que fazem parte da rede. [cite: 5] [cite_start]Este projeto foi iniciado em 2008 com museus pertencentes à FUNARJ, o sucesso impulsionou a criação da Rede Web de Museus como política pública, em 2014, para adesão de instituições museais da esfera estadual, federal, municipal, particulares e comunitárias do território do Rio de Janeiro. [cite: 6] [cite_start]Atualmente, contabiliza 26 instituições, entre públicas e privadas, que assinaram Termo de Adesão entre 2014 e 2023, alcançando 37 unidades / museus. [cite: 7]</p>
+                <p>O SISGAM – Sistema de Gerenciamento de Acervos Museológicos - é a principal ferramenta de integração e gestão de acervos para os museus que fazem parte da rede. Este projeto foi iniciado em 2008 com museus pertencentes à FUNARJ, o sucesso impulsionou a criação da Rede Web de Museus como política pública, em 2014, para adesão de instituições museais da esfera estadual, federal, municipal, particulares e comunitárias do território do Rio de Janeiro. Atualmente, contabiliza 26 instituições, entre públicas e privadas, que assinaram Termo de Adesão entre 2014 e 2023, alcançando 37 unidades / museus. </p>
                 <a href="#" class="btn-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Acesse o SISGAM</a>
             </div>
         </div>
@@ -366,55 +382,55 @@
         <div class="stats-banner">
             <div class="stat-item">
                 <h4>26</h4>
-                <p>Instituições Aderidas</p>
+                <p>Instituições Aderidas </p>
             </div>
             <div class="stat-item">
                 <h4>37</h4>
-                <p>Unidades e Museus</p>
+                <p>Unidades e Museus </p>
             </div>
             <div class="stat-item">
                 <h4>2014</h4>
-                <p>Início da Política Pública</p>
+                <p>Início da Política Pública </p>
             </div>
         </div>
 
-        <h2 class="section-title" id="como-aderir">Como Aderir à Rede</h2>
+        <h2 class="section-title" id="como-aderir">Como Aderir à Rede </h2>
         
         <div class="adesao-container">
             <p class="adesao-intro">
-                A adesão é <strong>gratuita e facultativa</strong>, possuindo caráter eminentemente técnico. [cite_start]Ela não condiciona a participação obrigatória em outros projetos do estado, nem obriga o uso exclusivo de ferramentas como o SISGAM. [cite: 19]
-            </p>
+                A adesão à Rede Web de Museus é <strong>gratuita e facultativa</strong>, possui caráter técnico, não condiciona a participação em projetos realizados e desenvolvidos pela rede, nem condiciona ao uso de ferramentas tecnológicas como o SISGAM. </p>
 
             <div class="adesao-grid">
                 <div class="adesao-box">
                     <h4><i class="fa-solid fa-clipboard-list"></i> Requisitos</h4>
                     <ul class="req-list">
-                        [cite_start]<li>Possua endereço no Estado do Rio de Janeiro; [cite: 13]</li>
-                        [cite_start]<li>Esteja inscrito ou inscreva-se no Cadastro Fluminense de Museus do Sistema Estadual de Museus do Estado do Rio de Janeiro (SIM/RJ); [cite: 14]<br>
-                        <a href="https://sim-rj-cfm.netlify.app/" target="_blank" class="btn-action" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; margin-bottom: 0.5rem;">Conheça o CFM</a></li>
-                        [cite_start]<li>Aceite que as atividades e ferramentas desenvolvidas na Rede Web de Museus são de caráter colaborativo e de cooperação entre os membros da rede, não sendo exclusivo de um só museu. [cite: 15]</li>
+                        <li>Possua endereço no Estado do Rio de Janeiro; </li>
+                        <li>Esteja inscrito ou inscreva-se no Cadastro Fluminense de Museus do Sistema Estadual de Museus do Estado do Rio de Janeiro (SIM/RJ); <br>
+                        <a href="https://sim-rj-cfm.netlify.app/" target="_blank" class="btn-action" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; margin-top: 0.8rem; margin-bottom: 0.5rem;">Conheça o CFM</a></li>
+                        <li>Aceite que as atividades e ferramentas desenvolvidas na Rede Web de Museus são de caráter colaborativo e de cooperação entre os membros da rede, não sendo exclusivo de um só museu. </li>
                     </ul>
                 </div>
 
                 <div class="adesao-box">
-                    <h4><i class="fa-solid fa-shoe-prints"></i> Passo a Passo</h4>
+                    <h4><i class="fa-solid fa-shoe-prints"></i> Passo a Passo </h4>
                     <ul class="step-list">
-                        [cite_start]<li><strong>Manifestação de Interesse:</strong> A instituição de memória ou museu envia uma solicitação (via e-mail) para a Coordenação da Comissão Técnica Permanente da Rede Web de Museus do Estado do Rio de Janeiro manifestando o interesse de participar, a Coordenação apresenta as condições e exime eventuais dúvidas; [cite: 17]</li>
-                        [cite_start]<li><strong>Aprovação:</strong> Em reunião ordinária a Comissão Técnica vota a aprovação da adesão, que constará em ata. [cite: 18]</li>
+                        <li><strong>Manifestação de Interesse:</strong> A instituição de memória ou museu envia uma solicitação (via e-mail) para a Coordenação da Comissão Técnica Permanente da Rede Web de Museus do Estado do Rio de Janeiro manifestando o interesse de participar, a Coordenação apresenta as condições e exime eventuais dúvidas; </li>
+                        <li><strong>Aprovação:</strong> Em reunião ordinária a Comissão Técnica vota a aprovação da adesão, que constará em ata. </li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <section class="contato-section" id="contato">
-            <h2>Fale Conosco</h2>
+            <h2>Fale Conosco </h2>
             <p>Deseja iniciar o processo de adesão ou tirar dúvidas sobre o SISGAM? Entre em contato com a Coordenação.</p>
             
             <div class="contato-info">
                 <div class="info-box">
                     <i class="fa-regular fa-envelope"></i>
                     <strong>E-mail Institucional</strong>
-                    <span>contato.museus@cultura.rj.gov.br</span> </div>
+                    <span>contato.museus@cultura.rj.gov.br</span>
+                </div>
                 
                 <div class="info-box">
                     <i class="fa-solid fa-location-dot"></i>

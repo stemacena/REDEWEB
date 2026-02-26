@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede Web de Museus - Governo do Estado do Rio de Janeiro</title>
+    <style>
+        :root {
+            --primary-blue: #004b87; /* Azul institucional RJ */
+            --secondary-blue: #0066cc;
+            --light-bg: #f4f7f6;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 2rem 5%;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        nav {
+            background-color: var(--secondary-blue);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            background-color: var(--white);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--secondary-blue);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            color: var(--secondary-blue);
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Rede Web de Museus</h1>
+        <p>Estado do Rio de Janeiro</p>
+    </header>
+
+    <nav>
+        <a href="#quem-somos">Quem Somos</a>
+        <a href="#como-aderir">Como Aderir</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <main>
+        <section id="quem-somos">
+            [cite_start]<h2>QUEM SOMOS? [cite: 1]</h2>
+            [cite_start]<h3>Bem-vindo(a) à Rede Web de Museus [cite: 2]</h3>
+            
+            [cite_start]<p>A Rede Web de Museus do Estado do Rio de Janeiro é uma política estadual, cujo objetivo é fomentar a colaboração e cooperação entre os museus e instituições de memória para ações de gestão, documentação, pesquisa, educação, comunicação, integração e acesso aos acervos museológicos de museus e instituições de memória no estado do Rio de Janeiro. [cite: 3]</p>
+            
+            [cite_start]<p>O SISGAM (Sistema de Gerenciamento de Acervos Museológicos) é a principal ferramenta de integração e gestão de acervos para os museus que fazem parte da rede. [cite: 4, 5]</p>
+            
+            [cite_start]<p>Este projeto foi iniciado em 2008 com museus pertencentes à FUNARJ, o sucesso impulsionou a criação da Rede Web de Museus como política pública, em 2014, para adesão de instituições museais da esfera estadual, federal, municipal, particulares e comunitárias do território do Rio de Janeiro. [cite: 6] [cite_start]Atualmente, contabiliza 26 instituições, entre públicas e privadas, que assinaram Termo de Adesão entre 2014 e 2023, alcançando 37 unidades / museus. [cite: 7]</p>
+
+            <h4>Estrutura da Rede Web de Museus:</h4>
+            <ul>
+                [cite_start]<li>Coordenação e gestão através da Secretaria de Estado de Cultura e Economia Criativa, Superintendência de Museus, Coordenação de Museologia; [cite: 8]</li>
+                [cite_start]<li>Apoio técnico ao SISGAM através da Secretaria de Estado de Cultura e Economia Criativa, Assessoria de Tecnologia da Informação; [cite: 9]</li>
+                [cite_start]<li>Comissão Técnica Permanente da Rede Web de Museus do Estado do Rio de Janeiro, composta por coordenação, membros permanentes e membros colaboradores. [cite: 10]</li>
+            </ul>
+        </section>
+
+        <section id="como-aderir">
+            [cite_start]<h2>COMO ADERIR? [cite: 11]</h2>
+            
+            [cite_start]<p>A adesão à Rede Web de Museus é gratuita e facultativa, possui caráter técnico, não condiciona a participação em projetos realizados e desenvolvidos pela rede, nem condiciona ao uso de ferramentas tecnológicas como o SISGAM. [cite: 19]</p>
+            
+            <h4>Requisitos para Adesão:</h4>
+            [cite_start]<p>Para adesão à Rede Web de Museus do Estado do Rio de Janeiro estabelece-se que o museu ou instituição de memória: [cite: 12]</p>
+            <ul>
+                [cite_start]<li>Possua endereço no Estado do Rio de Janeiro; [cite: 13]</li>
+                [cite_start]<li>Esteja inscrito ou inscreva-se no Cadastro Fluminense de Museus do Sistema Estadual de Museus do Estado do Rio de Janeiro (SIM/RJ); [cite: 14]</li>
+                [cite_start]<li>Aceite que as atividades e ferramentas desenvolvidas na Rede Web de Museus são de caráter colaborativo e de cooperação entre os membros da rede, não sendo exclusivo de um só museu. [cite: 15]</li>
+            </ul>
+
+            [cite_start]<h4>Passo a Passo para Formalizar: [cite: 16]</h4>
+            <ol style="margin-left: 1.5rem; margin-bottom: 1rem; color: var(--text-light);">
+                [cite_start]<li style="margin-bottom: 0.5rem;">A instituição de memória ou museu envia uma solicitação (via e-mail) para a Coordenação da Comissão Técnica Permanente da Rede Web de Museus do Estado do Rio de Janeiro manifestando o interesse de participar, a Coordenação apresenta as condições e exime eventuais dúvidas; [cite: 17]</li>
+                [cite_start]<li style="margin-bottom: 0.5rem;">Em reunião ordinária a Comissão Técnica vota a aprovação da adesão, que constará em ata. [cite: 18]</li>
+            </ol>
+        </section>
+
+        <section id="contato">
+            [cite_start]<h2>CONTATO [cite: 20]</h2>
+            <p>Tem interesse em integrar sua instituição ou possui alguma dúvida sobre o SISGAM e a Rede Web de Museus?</p>
+            <p>Envie sua solicitação para a Coordenação da Comissão Técnica Permanente.</p>
+            <a href="mailto:email@cultura.rj.gov.br" class="cta-button">Enviar E-mail para a Coordenação</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Rede Web de Museus. Secretaria de Estado de Cultura e Economia Criativa - RJ.</p>
+    </footer>
+
+</body>
+</html>
